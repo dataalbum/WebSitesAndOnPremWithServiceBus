@@ -1,0 +1,36 @@
+﻿@model WebSitesWithOnPremIntegration.Core.Customer
+
+@{
+    ViewBag.Title = "Registration Form";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title</h1>
+                <h2>Thanks for being a new customer!</h2>
+            </hgroup>
+            <p>
+                Use the form below to provide all your private customer data, which we'll store
+                in our own, secure, private storage facility, surrounded by armed guards, each 
+                of whom has their very own machine gun and trained Doberman. 
+            </p>
+        </div>
+    </section>
+}
+@using (Html.BeginForm())
+{
+    <div>
+        <label>Full Name</label>
+        @Html.TextBoxFor(x => x.Name)
+    </div>
+    <div>
+        <label>City</label>
+        @Html.TextBoxFor(x => x.City)
+    </div>
+    <div>
+        <label>Country</label>
+        @Html.TextBoxFor(x => x.Country)
+    </div>
+    <input type="submit" value="Save" />
+}
